@@ -1,0 +1,48 @@
+<!doctype html>
+
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+
+  <title>The HTML5 Herald</title>
+  <meta name="description" content="Dropdown AJAX">
+  <meta name="author" content="Bevan Thistlethwaite">
+
+<!--  <link rel="stylesheet" href="css/styles.css?v=1.0"> -->
+
+</head>
+
+<body>
+  <script>
+    function ajax(){
+        // xmlhttp new object
+        var xhr = new XMLHttpRequest();
+
+        // Ready State - 0
+        console.log('readyState after new : ' + xhr.readyState);
+        // Open function 
+        url = 'http:localhost:8080/statz/getAuthorities';
+        xhr.open('GET', url, true);
+        
+        // Ready State - 1
+        console.log('readyState afer open : ' + xhr.readyState);
+        // check response is ready with response status = 4
+        xhr.onreadystatechange = function () {
+            // Ready State - 2,3,4
+            console.log('readyState inside function : ' + xhr.readyState);
+            if(xhr.readyState == 4 && xhr.status == 200){
+                var text = xhr.responseText;
+                console.log('response from ajax.php : ' + xhr.responseText);
+                var ajaxResult = document.getElementById("ajax");
+                ajaxResult.innerHTML = text;
+            }
+        }
+        xhr.send();
+    }
+  </script>
+  <button onclick="ajax();">Click Here</button>
+  <div id="ajax">
+
+  </div>
+</body>
+</html>

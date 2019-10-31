@@ -1,0 +1,28 @@
+{
+  "name": "adherence",
+  "version": "1.0.0",
+  "description": "Schedule adherence for a series of transit trips displayed dynamically",
+  "main": "index.js",
+  "dependencies": {
+    "core-js": "^3.2.0",
+    "install-peers": "^1.0.3",
+    "moment": "^2.24.0"
+  },
+  "devDependencies": {
+    "webpack": "^4.39.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Bevan Thistlethwaite",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "transitrhythm.com/schedule/adherence"
+  },
+  "keywords": [
+    "transit",
+    "schedule",
+    "adherence"
+  ]
+}

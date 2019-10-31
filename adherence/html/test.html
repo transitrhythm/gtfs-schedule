@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en-US">
+    <head>
+        <title>Test</title>
+        <meta charset="UTF-8">
+        <script src="../js/bundle.js"></script>
+    </head>
+    <select name="authority" id="authority-select"></select>
+    <select name="agency" id="agency-select"></select>
+    <script src="../js/XMLHTTPRequest.js"></script>
+    <script src="../includes/include.html"></script>
+    <script>
+        $( document ).ready(function(){
+            initialize_everything(function() {
+                console.log(grantsData);
+                
+            });    
+        });
+        $( document ).ready(function() {
+            console.log( "document loaded" );
+            makeRequest('http://localhost:8080/getAgencies');
+        });        
+    </script>    
+    <input type="submit">
+</html>
+    

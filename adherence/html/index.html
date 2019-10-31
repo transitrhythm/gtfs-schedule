@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+	<html lang="en-US">
+	<head>
+	    <title>Schedule Adherence for a series of Transit Trips Displayed Dynamically</title>
+    	<meta charset="UTF-8">
+        <meta name="description" content="Public Transit Schedule Adherence">
+        <meta name="keywords" content="HTML, CSS, JSON, JavaScript, AJAX, Fetch">
+        <meta name="author" content="Bevan Thistlethwaite - TransitRhythm">
+        <meta http-equiv="refresh" content="30">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../css/adherence.css">
+        <script type ="text/javascript" src ="../js/adherence.js"></script>
+        <script type="text/javascript" src="../js/data.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script>
+            $( document ).ready(function(){
+                initialize_everything(function() {
+                    console.log(grantsData);
+                    
+                });    
+            });
+            $( document ).ready(function() {
+                console.log( "document loaded" );
+            });
+            $( window ).on( "load", function() {
+                console.log( "window loaded" );
+            });        
+        </script>         
+	</head>	
+    <h1>
+        <span class = "engraved">Schedule Adherence</span>
+    </h1><hr>
+
+    <!--<div class="grid1">-->
+    <table id="agency_select">
+    <caption>Transit Agency Selection</caption>
+    <tr>
+    <th>
+    <div id="authority">
+    <h2><span class = "engraved">Transit Authority</span></h2>
+    <p><i>Change the authority using the drop-down list:</i></p>	
+    <form action="/authority_page.php">
+        <select name="authority">
+            <option value="1">BC Transit</option>
+            <option value="2">Vancouver Translink</option>
+        </select>
+        <br><br>
+        <input type="submit">
+    </form>	
+    </div>
+    </th>
+    <th>
+    <div id="agency" class="hidden">
+    <h2>Transit Agency</h2>
+    <p><i>Change the transit agency using the drop-down list:</i></p>	
+    <form action="/agency_page.php">
+        <select name="agency">
+            <option value="12">Comox Valley Transit System</option>
+            <option value="8">Kamloops Transit System</option>
+            <option value="7">Kelowna Regional Transit System</option>
+            <option value="5">RDN Transit System</option>
+            <option value="4">Squamish Transit System</option>
+            <option value="1" selected>Victoria Regional Transit System</option>
+            <option value="3">Whistler Transit System</option>
+        </select>
+        <br><br>
+        <input type="submit">
+    </form>
+    </div>
+    <!--</div>-->
+    </th>
+    </tr>
+    </table>
+    <div class="grid">
+        <script>
+        setInterval(function() {
+            var imgs = document.getElementsByTagName("IMG");
+            for (var i=0; i < imgs.length; i++) {
+                var eqPos = imgs[i].src.lastIndexOf("=");
+                var src = imgs[i].src.substr(0, eqPos+1);
+                imgs[i].src = src + Math.random();
+            }
+        }, 1000);
+        </script>
+    </div>
+</html>
+

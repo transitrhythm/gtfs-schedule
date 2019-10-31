@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Schedule Adherence for a series of Transit Trips Displayed Dynamically</title>
+
+        <link href="../css/styles.css" rel="stylesheet" />
+
+        <style>
+          #chart {
+                  max-width: 650px;
+                  margin: 35px auto;
+              }
+          </style>
+        
+        <style>
+            .grid {
+                -webkit-column-count: 2; /* Old Chrome, Safari and Opera */
+                -moz-column-count: 2; /* Old Firefox */
+                column-count: 2;
+            }
+        </style>
+</head>
+<body>
+    <div id="chart">
+        <apexchart ref="realtimeChart" type=line height=350 :options="chartOptions" :series="series" />
+    </div>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts@latest"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue-apexcharts"></script>
+    <script src="../js/graph.js"></script>    
+</body>
+</html>
